@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap');
+
+// 全局设置
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  line-height: 150%;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// 全局主题色
+$main: #03acff;
+$title: #000135;
+$desc: #909295;
+$light: #edf6fb;
+$bg-light: #f0f6fe;
+$line: #e4eaf0;
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.query-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .n-input {
+    max-width: 240px;
+  }
+  .icon-btn {
+    width: 34px;
+  }
+}
