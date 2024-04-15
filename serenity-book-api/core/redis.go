@@ -2,9 +2,9 @@ package core
 
 import (
 	"context"
-	"dream-book/global"
 	"github.com/go-redis/redis/v8"
 	"log"
+	"serenity-book/global"
 )
 
 func InitRedis() {

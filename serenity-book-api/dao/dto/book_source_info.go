@@ -1,7 +1,7 @@
 package dto
 
 import (
-	"dream-book/dao/entity"
+	"serenity-book/dao/entity"
 )
 
 type BookSourceInfoDto struct {

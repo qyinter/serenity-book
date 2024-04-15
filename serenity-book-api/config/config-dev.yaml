@@ -7,7 +7,7 @@ mysql:
   port: 3306
   username: root
   password: root
-  dbname: dream-book
+  dbname: serenity-book
   engine: innodb
   max-idle-conns: 10
   max-open-conns: 100

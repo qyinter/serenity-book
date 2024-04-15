@@ -1,13 +1,13 @@
 package core
 
 import (
-	"dream-book/global"
-	"dream-book/utils"
 	"fmt"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"os"
 	"path/filepath"
+	"serenity-book/global"
+	"serenity-book/utils"
 	"time"
 )
 

@@ -1,11 +1,11 @@
 package core
 
 import (
-	adminRouter "dream-book/admin_router"
-	apiRouter "dream-book/api_router"
-	"dream-book/middleware"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
+	adminRouter "serenity-book/admin_router"
+	apiRouter "serenity-book/api_router"
+	"serenity-book/middleware"
 )
 
 // RouterInit 整个路由初始化入口

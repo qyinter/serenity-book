@@ -1,14 +1,14 @@
 package core
 
 import (
-	"dream-book/global"
-	"dream-book/utils"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"log"
 	"os"
+	"serenity-book/global"
+	"serenity-book/utils"
 	"time"
 )
 

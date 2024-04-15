@@ -1,14 +1,14 @@
 package service
 
 import (
-	"dream-book/dao/dto"
-	"dream-book/dao/entity"
-	"dream-book/dao/model"
-	"dream-book/global"
-	"dream-book/result"
 	"fmt"
 	"github.com/bwmarrin/snowflake"
 	"github.com/gin-gonic/gin"
+	"serenity-book/dao/dto"
+	"serenity-book/dao/entity"
+	"serenity-book/dao/model"
+	"serenity-book/global"
+	"serenity-book/result"
 	"time"
 )
 

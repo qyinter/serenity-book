@@ -1,4 +1,4 @@
-module dream-book
+module serenity-book
 
 go 1.20
 
