@@ -1,9 +1,9 @@
 package core
 
 import (
+	"dream-book/global"
 	"fmt"
 	"github.com/spf13/viper"
-	"mengjing-book/global"
 )
 
 // InitConfigByViper 将配置文件解析为global.ServerConfig

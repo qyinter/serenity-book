@@ -7,7 +7,7 @@ mysql:
   port: 3306
   username: root
   password: root
-  dbname: mengjing-book
+  dbname: dream-book
   engine: innodb
   max-idle-conns: 10
   max-open-conns: 100

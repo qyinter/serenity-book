@@ -1,11 +1,11 @@
 package core
 
 import (
+	adminRouter "dream-book/admin_router"
+	apiRouter "dream-book/api_router"
+	"dream-book/middleware"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
-	adminRouter "mengjing-book/admin_router"
-	apiRouter "mengjing-book/api_router"
-	"mengjing-book/middleware"
 )
 
 // RouterInit 整个路由初始化入口

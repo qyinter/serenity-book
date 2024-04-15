@@ -1,14 +1,14 @@
 package service
 
 import (
+	"dream-book/dao/dto"
+	"dream-book/dao/entity"
+	"dream-book/dao/model"
+	"dream-book/global"
+	"dream-book/result"
 	"fmt"
 	"github.com/bwmarrin/snowflake"
 	"github.com/gin-gonic/gin"
-	"mengjing-book/dao/dto"
-	"mengjing-book/dao/entity"
-	"mengjing-book/dao/model"
-	"mengjing-book/global"
-	"mengjing-book/result"
 	"time"
 )
 

@@ -1,8 +1,8 @@
 package admin_router
 
 import (
+	"dream-book/service"
 	"github.com/gin-gonic/gin"
-	"mengjing-book/service"
 )
 
 func CrawlRoutes(router *gin.RouterGroup) {

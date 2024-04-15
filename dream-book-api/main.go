@@ -1,9 +1,9 @@
 package main
 
 import (
+	"dream-book/core"
+	"dream-book/global"
 	"go.uber.org/zap"
-	"mengjing-book/core"
-	"mengjing-book/global"
 )
 
 func main() {
