@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('~/assets/fonts/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('~/assets/fonts/AlibabaPuHuiTi-3-85-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+// 全局设置
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'AlibabaPuHuiTi', sans-serif;
+  line-height: 150%;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// 全局主题色
+$main: #03acff;
+$title: #000135;
+$desc: #909295;
+$light: #edf6fb;
+$bg-light: #f0f6fe;
+$line: #e4eaf0;
