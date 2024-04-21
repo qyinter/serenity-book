@@ -1,7 +1,4 @@
 env: local
-http:
-  port: 8000
-
 # 验证码配置
 captcha:
   key-long: 6
@@ -9,6 +6,18 @@ captcha:
   img-height: 80
   open-captcha: 0 # 0代表一直开启，大于0代表限制次数
   open-captcha-timeout: 3600 # open-captcha大于0时才生效
+# 系统配置
+system:
+  env: local # 修改为public可以关闭路由日志输出
+  host: 127.0.0.1 # 服务地址
+  addr: 8888  # 服务端口
+  use-multipoint: false
+  # IP限制次数 一个小时15000次
+  iplimit-count: 15000
+  #  IP限制一个小时
+  iplimit-time: 3600
+  #  路由全局前缀
+  router-prefix: ""
 # 跨域配置
 # 需要配合 `Router.Use(middleware.CorsByRules())` 使用
 cors:
