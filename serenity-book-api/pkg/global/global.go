@@ -15,5 +15,6 @@ var (
 	// GViper 配置
 	GVP *viper.Viper
 	//BlackCache 本地缓存
-	lock sync.RWMutex
+	lock     sync.RWMutex
+	DbConfig config.DbConfig
 )

@@ -39,14 +39,23 @@ security:
   api_sign:
     app_key: 123456
     app_security: 123456
-  jwt:
-    key: 1234
+  secret: N4YfvvoOnfIL9xHlEXc5fUtQNfQPKkEMEkicubDIJK80bMduFNEKkT814ge8Sy76
+  expire: 168
+  token_prefix: "Authorization"
+
 data:
   mysql:
-    user: root:123456@tcp(127.0.0.1:3306)/book?charset=utf8mb4&parseTime=True&loc=Local
+    username: "root"
+    password: "root"
+    host: "127.0.0.1"
+    port: "3306"
+    database: "mengjing-book"
+    charset: "utf8mb4"
+    parseTime: true
+    loc: "Local"
   redis:
-    addr: 127.0.0.1:6350
-    password: "123456"
+    addr: 127.0.0.1:6379
+    password: ""
     db: 0
     read_timeout: 0.2s
     write_timeout: 0.2s

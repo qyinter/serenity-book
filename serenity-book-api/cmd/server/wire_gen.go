@@ -12,6 +12,7 @@ import (
 	"github.com/spf13/viper"
 	"serenity-book-api/internal/handler"
 	"serenity-book-api/internal/repository"
+	"serenity-book-api/internal/security"
 	"serenity-book-api/internal/server"
 	"serenity-book-api/internal/service"
 	"serenity-book-api/pkg/log"
@@ -23,10 +24,12 @@ func newApp(viperViper *viper.Viper, logger *log.Logger) (*gin.Engine, func(), e
 	handlerHandler := handler.NewHandler(logger)
 	serviceService := service.NewService(logger)
 	db := repository.NewDb()
-	repositoryRepository := repository.NewRepository(logger, db)
+	client := repository.NewRedis()
+	repositoryRepository := repository.NewRepository(logger, db, client)
+	securityUtils := security.NewSecurityUtils(serviceService, repositoryRepository)
 	userRepository := repository.NewUserRepository(repositoryRepository)
 	userService := service.NewUserService(serviceService, userRepository)
-	userHandler := handler.NewUserHandler(handlerHandler, userService)
+	userHandler := handler.NewUserHandler(handlerHandler, securityUtils, userService)
 	systemRepository := repository.NewSystemRepository(repositoryRepository)
 	systemService := service.NewSystemService(serviceService, systemRepository)
 	systemHandler := handler.NewSystemHandler(handlerHandler, systemService)
@@ -39,7 +42,9 @@ func newApp(viperViper *viper.Viper, logger *log.Logger) (*gin.Engine, func(), e
 
 var ServerSet = wire.NewSet(server.NewServerHTTP)
 
-var RepositorySet = wire.NewSet(repository.NewDb, repository.NewRepository, repository.NewUserRepository, repository.NewSystemRepository)
+var RepositorySet = wire.NewSet(repository.NewDb, repository.NewRedis, repository.NewRepository, repository.NewUserRepository, repository.NewSystemRepository)
+
+var SecuritySet = wire.NewSet(security.NewSecurityUtils)
 
 var ServiceSet = wire.NewSet(service.NewService, service.NewUserService, service.NewSystemService)
 

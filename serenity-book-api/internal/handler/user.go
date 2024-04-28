@@ -2,27 +2,37 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"serenity-book-api/internal/service"
-	"serenity-book-api/pkg/helper/resp"
 	"go.uber.org/zap"
 	"net/http"
+	"serenity-book-api/internal/security"
+	"serenity-book-api/internal/service"
+	"serenity-book-api/pkg/helper/resp"
 )
 
 type UserHandler interface {
 	GetUserById(ctx *gin.Context)
 	UpdateUser(ctx *gin.Context)
+	Login(ctx *gin.Context)
 }
 
 type userHandler struct {
 	*Handler
-	userService service.UserService
+	securityUtils security.SecurityUtils
+	userService   service.UserService
 }
 
-func NewUserHandler(handler *Handler, userService service.UserService) UserHandler {
+func NewUserHandler(handler *Handler, securityUtils security.SecurityUtils, userService service.UserService) UserHandler {
 	return &userHandler{
-		Handler:     handler,
-		userService: userService,
+		Handler:       handler,
+		securityUtils: securityUtils,
+		userService:   userService,
 	}
+}
+
+func (h *userHandler) Login(ctx *gin.Context) {
+	h.securityUtils.Login(1, security.LoginModel{}, ctx)
+	resp.HandleSuccess(ctx, nil)
+	return
 }
 
 func (h *userHandler) GetUserById(ctx *gin.Context) {

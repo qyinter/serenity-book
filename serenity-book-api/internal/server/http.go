@@ -43,6 +43,8 @@ func NewServerHTTP(
 	baseApi := PublicGroup.Group("/base")
 	// 验证码接口
 	baseApi.GET("/captcha", systemHandler.GetCaptcha)
-
+	// login
+	sysApi := PublicGroup.Group("/sys")
+	sysApi.GET("/login", userHandler.Login)
 	return r
 }

@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/viper"
 	"serenity-book-api/internal/handler"
 	"serenity-book-api/internal/repository"
+	"serenity-book-api/internal/security"
 	"serenity-book-api/internal/server"
 	"serenity-book-api/internal/service"
 	"serenity-book-api/pkg/log"
@@ -18,9 +19,14 @@ var ServerSet = wire.NewSet(server.NewServerHTTP)
 
 var RepositorySet = wire.NewSet(
 	repository.NewDb,
+	repository.NewRedis,
 	repository.NewRepository,
 	repository.NewUserRepository,
 	repository.NewSystemRepository,
+)
+
+var SecuritySet = wire.NewSet(
+	security.NewSecurityUtils,
 )
 
 var ServiceSet = wire.NewSet(
@@ -39,6 +45,7 @@ func newApp(*viper.Viper, *log.Logger) (*gin.Engine, func(), error) {
 	panic(wire.Build(
 		ServerSet,
 		RepositorySet,
+		SecuritySet,
 		ServiceSet,
 		HandlerSet,
 	))
